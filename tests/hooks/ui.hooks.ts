@@ -16,6 +16,19 @@ After({name: 'After UI Hook', tags: '@ui-tests2'},async function() {
     await driverInstance.closeDriver();
 });
 
+Before({name: 'Before UI Hook', tags: '@ui-tests3'},async function() {
+    await driverInstance.start(TESTDATA.url3);
+});
+After({name: 'After UI Hook', tags: '@ui-tests3'},async function() {    
+    await driverInstance.closeDriver();
+});
+
+Before({name: 'Before UI Hook', tags: '@ui-tests4'},async function() {
+    await driverInstance.start(TESTDATA.url4);
+});
+After({name: 'After UI Hook', tags: '@ui-tests4'},async function() {    
+    await driverInstance.closeDriver();
+});
 
 After({name: 'Take Screenshot', tags: '@ui-tests'},async function(this: CustomWorld, scenario) {
     if(scenario.result?.status == Status.FAILED) {
